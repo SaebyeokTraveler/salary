@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#162747" />
+  <meta name="description" content="월별 수입과 지출을 입력하고 남는 월급을 확인하는 개인용 월급관리 앱입니다." />
+  <title>월급 잔액 | 간편 월급관리</title>
+  <style>
+:root{font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;color:#182640;background:#f5f7fb;font-synthesis:none;-webkit-text-size-adjust:100%;}
+*{box-sizing:border-box}body{margin:0;min-width:320px}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #72aae9;outline-offset:3px}.app-shell{max-width:620px;min-height:100vh;margin:0 auto;padding:28px 19px calc(28px + env(safe-area-inset-bottom))}.topbar{display:flex;align-items:center;gap:12px;margin-bottom:27px}.brand-mark{height:44px;width:44px;display:grid;place-items:center;background:#162747;border-radius:16px;color:#fff;font-size:28px;font-weight:750;box-shadow:0 5px 14px #15274420}.brand-eyebrow{font-size:11px;letter-spacing:.07em;color:#728097;font-weight:700;margin:0 0 2px}.topbar h1{font-size:22px;letter-spacing:-.055em;margin:0;font-weight:850}.topbar-icon{width:35px;height:35px;color:#9ca9ba;margin-left:auto}.topbar-icon svg{width:100%;height:100%}.month-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:17px}.month-arrow{width:42px;height:42px;background:#fff;border:1px solid #e3e9f1;color:#4d617a;border-radius:13px;font-size:32px;line-height:1;box-shadow:0 3px 9px #1c2e4910}.month-arrow:active{transform:scale(.97)}.month-picker-wrap{position:relative;min-width:0;flex:1;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px}.month-kicker{font-size:11px;font-weight:650;letter-spacing:.04em;color:#7a8da8}.month-text{font-size:22px;font-weight:820;letter-spacing:-.06em;white-space:nowrap}.month-picker-wrap input{position:absolute;inset:0;width:100%;height:100%;opacity:.01;cursor:pointer}.balance-panel{background:linear-gradient(145deg,#172a4a,#1d3864);color:#fff;padding:28px 24px 21px;border-radius:25px;position:relative;overflow:hidden;box-shadow:0 11px 25px #20396222}.balance-panel-glow{position:absolute;right:-73px;top:-72px;width:220px;height:220px;background:radial-gradient(circle,#49aadd3b 3%,#49aadd00 66%);pointer-events:none}.balance-label{position:relative;font-size:13px;letter-spacing:-.02em;font-weight:650;color:#b9cce5;margin:0 0 8px}.balance-value{position:relative;font-size:40px;font-weight:860;letter-spacing:-.06em;overflow-wrap:anywhere;line-height:1.25;font-variant-numeric:tabular-nums}.balance-value span{font-size:19px;font-weight:600;margin-left:5px;letter-spacing:0}.balance-value.negative{color:#ffc4b9}.balance-message{font-size:12px;color:#c5d6e9;margin-top:9px;min-height:18px}.panel-divider{height:1px;background:#ffffff23;margin:22px 0 19px}.mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:13px}.mini-stats>div{display:flex;flex-direction:column;gap:7px;min-width:0}.mini-stat-title{font-size:12px;color:#c4d2e6;display:flex;gap:7px;align-items:center}.stat-dot{width:8px;height:8px;display:inline-block;border-radius:50%}.dot-income{background:#77e0b5}.dot-expense{background:#ffba9f}.mini-stats strong{font-size:18px;font-weight:740;letter-spacing:-.035em;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}.section-heading{margin:31px 2px 12px;display:flex;align-items:center;justify-content:space-between}.section-heading h2{font-size:18px;letter-spacing:-.05em;margin:0}.section-heading>span{font-size:11px;color:#8293a9;display:flex;align-items:center;gap:5px}.section-heading>span:before{content:"";height:6px;width:6px;border-radius:50%;background:#5db893;display:block}.entry-card{background:#fff;border:1px solid #e7ebf2;border-radius:20px;padding:21px 19px 4px;margin-bottom:14px;box-shadow:0 5px 14px #344b6508}.card-heading{display:flex;align-items:center;gap:9px;margin-bottom:7px}.heading-icon{width:28px;height:28px;border-radius:10px;display:grid;place-items:center;font-size:19px;font-weight:650}.income-icon{background:#e7f9f0;color:#159868}.expense-icon{background:#fff0ea;color:#d9764e}.card-heading h3{font-size:16px;margin:0;letter-spacing:-.04em}.section-total{margin-left:auto;font-size:16px;letter-spacing:-.025em;font-variant-numeric:tabular-nums}.income-total{color:#14986a}.expense-total{color:#d06f50}.field-row{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:14px 0;min-height:62px;border-bottom:1px solid #eef1f6}.field-row:last-child{border-bottom:0}.field-label{font-size:14px;font-weight:600;letter-spacing:-.025em;min-width:0;flex:1}.amount-control{display:flex;align-items:center;justify-content:flex-end;gap:5px;flex:0 1 55%;max-width:245px}.amount-control input{width:100%;max-width:210px;text-align:right;color:#192943;font-weight:710;font-size:17px;letter-spacing:-.03em;padding:11px 6px;border:1px solid #e6edf5;border-radius:11px;background:#f8fafd;min-width:0;font-variant-numeric:tabular-nums}.amount-control input::placeholder{color:#bdc7d5;font-weight:500}.amount-control input:focus{background:white;border-color:#5c91df;outline:2px solid #b7d5ff;outline-offset:0}.amount-control .unit{font-size:13px;color:#8492a6}.export-section{margin-top:27px}.export-section h2{font-size:17px;margin:0 0 5px;letter-spacing:-.05em}.export-section p{font-size:12px;color:#8290a3;line-height:1.7;margin:0 0 16px}.export-button{display:flex;align-items:center;justify-content:center;gap:8px;border:0;background:#3269c5;color:#fff;font-weight:750;letter-spacing:-.02em;font-size:16px;border-radius:15px;padding:17px;width:100%;box-shadow:0 6px 14px #3269c526}.export-button:active{background:#2358af}.export-button:disabled{opacity:.65;cursor:wait}.backup-panel{margin:21px 0 0;border:1px solid #e4eaf2;border-radius:14px;background:#fff;padding:14px 16px}.backup-panel summary{font-size:12px;color:#5c6c82;font-weight:650;cursor:pointer;display:flex;justify-content:space-between;align-items:center;list-style:none}.backup-panel summary::-webkit-details-marker{display:none}.backup-panel summary span{font-size:18px}.backup-panel[open] summary span{transform:rotate(180deg)}.backup-panel p{line-height:1.75;font-size:12px;color:#72829a;margin:12px 0}.backup-buttons{display:flex;gap:8px;flex-wrap:wrap}.backup-buttons button{background:#f2f5fa;border:1px solid #dce5f0;color:#334c70;border-radius:9px;padding:10px 11px;font-weight:700;font-size:12px}.privacy-note{text-align:center;font-size:11px;color:#8b9aac;line-height:1.8;margin:20px auto 10px}footer{text-align:center;color:#a5b0be;font-size:11px;margin-top:20px}.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translate(-50%,20px);border-radius:12px;background:#1d304e;color:white;padding:12px 17px;font-size:13px;box-shadow:0 8px 25px #172a4a3d;opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease;max-width:calc(100vw - 40px);width:max-content;text-align:center;z-index:10}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(min-width:700px){.app-shell{padding-top:45px}.balance-panel{padding:32px 30px 26px}.balance-value{font-size:47px}}@media(max-width:350px){.app-shell{padding-left:13px;padding-right:13px}.balance-value{font-size:35px}.amount-control{flex-basis:54%}.field-label{font-size:13px}.amount-control input{font-size:15px}}
+
+</style>
+  
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">₩</div>
+      <div><p class="brand-eyebrow">나만의 월급 정산</p><h1>월급 잔액</h1></div>
+      <div class="topbar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="6.5" width="17" height="13.5" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 4v4M16 4v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+    </header>
+
+    <main>
+      <section class="month-toolbar" aria-label="정산 월 선택">
+        <button class="month-arrow" id="prevMonth" type="button" aria-label="이전 달">‹</button>
+        <label class="month-picker-wrap" for="monthPicker">
+          <span class="month-kicker">정산 월 선택</span>
+          <span id="monthText" class="month-text">2026년 11월</span>
+          <input id="monthPicker" type="month" aria-label="정산 월" />
+        </label>
+        <button class="month-arrow" id="nextMonth" type="button" aria-label="다음 달">›</button>
+      </section>
+
+      <section class="balance-panel" aria-label="월 정산 요약">
+        <div class="balance-panel-glow" aria-hidden="true"></div>
+        <p class="balance-label">이번 달 남는 금액</p>
+        <div class="balance-value" id="balanceValue" aria-live="polite">0<span>원</span></div>
+        <div class="balance-message" id="balanceMessage">수입과 지출을 입력해 주세요</div>
+        <div class="panel-divider"></div>
+        <div class="mini-stats">
+          <div><span class="mini-stat-title"><i class="stat-dot dot-income"></i>총수입</span><strong id="totalIncome">0원</strong></div>
+          <div><span class="mini-stat-title"><i class="stat-dot dot-expense"></i>총지출</span><strong id="totalExpense">0원</strong></div>
+        </div>
+      </section>
+
+      <div class="section-heading"><h2>내역 입력</h2><span id="saveStatus" role="status">자동 저장</span></div>
+      <section class="entry-card" aria-labelledby="incomeHeading">
+        <div class="card-heading"><span class="heading-icon income-icon" aria-hidden="true">＋</span><h3 id="incomeHeading">수입</h3><strong class="section-total income-total" id="incomeSubtotal">0원</strong></div>
+        <div id="incomeFields" class="fields"></div>
+      </section>
+      <section class="entry-card" aria-labelledby="expenseHeading">
+        <div class="card-heading"><span class="heading-icon expense-icon" aria-hidden="true">−</span><h3 id="expenseHeading">지출</h3><strong class="section-total expense-total" id="expenseSubtotal">0원</strong></div>
+        <div id="expenseFields" class="fields"></div>
+      </section>
+
+      <section class="export-section" aria-label="월별 결과 저장">
+        <div><h2>이번 달 정산 완료</h2><p>수입 · 지출 내역과 남는 금액을 한 장의 이미지로 저장합니다.</p></div>
+        <button id="downloadJpg" class="export-button" type="button"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>월별 내역 JPG 저장</span></button>
+      </section>
+
+      <details class="backup-panel"><summary>기기 변경·분실에 대비한 데이터 백업 <span aria-hidden="true">⌄</span></summary>
+        <p>입력 내용은 이 기기의 브라우저에만 저장됩니다. 데이터 백업 파일(JSON)은 나중에 다른 기기에서 복원할 수 있습니다. JPG는 복원용 파일이 아닙니다.</p>
+        <div class="backup-buttons"><button id="backupData" type="button">전체 월별 데이터 백업</button><button id="restoreData" type="button">백업 파일 복원</button></div>
+        <input id="restoreFile" type="file" accept=".json,application/json" hidden />
+      </details>
+      <p class="privacy-note">✓ 회원가입 없음 · 서버 전송 없음 · 입력 즉시 기기에 저장 · 월별 독립 계산</p>
+    </main>
+    <footer>개인용 월급 정산 도구</footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script>
+'use strict';
+
+const STORAGE_KEY = 'monthly-paycheck-data-v1';
+const BACKUP_FORMAT = 'monthly-paycheck-v1';
+const MAX_AMOUNT = 999999999999;
+const FIELDS = [
+  { key: 'net', label: '실수령액', group: 'income' },
+  { key: 'otherIncome', label: '기타수입', group: 'income' },
+  { key: 'interest', label: '이자', group: 'expense' },
+  { key: 'nhCard', label: '카드값 · 농협', group: 'expense' },
+  { key: 'hanaCard', label: '카드값 · 하나', group: 'expense' },
+  { key: 'allowance', label: '용돈', group: 'expense' },
+  { key: 'activity', label: '특별활동비', group: 'expense' },
+  { key: 'otherExpense', label: '기타지출', group: 'expense' }
+];
+const formatter = new Intl.NumberFormat('ko-KR');
+const $ = id => document.getElementById(id);
+const formatNumber = n => formatter.format(Math.abs(n));
+const formatWon = n => `${n < 0 ? '−' : ''}${formatNumber(n)}원`;
+const emptyMonth = () => Object.fromEntries(FIELDS.map(f => [f.key, 0]));
+
+function sanitizeAmount(raw) {
+  const digits = String(raw ?? '').replace(/[^0-9]/g, '').slice(0, 12);
+  return Math.min(Number(digits || 0), MAX_AMOUNT);
+}
+function normalizeMonth(raw) {
+  const record = emptyMonth();
+  if (raw && typeof raw === 'object' && !Array.isArray(raw)) {
+    for (const f of FIELDS) record[f.key] = sanitizeAmount(raw[f.key]);
+  }
+  return record;
+}
+function loadData() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return {};
+    const result = {};
+    for (const [key, value] of Object.entries(raw)) {
+      if (/^\d{4}-(0[1-9]|1[0-2])$/.test(key)) result[key] = normalizeMonth(value);
+    }
+    return result;
+  } catch { return {}; }
+}
+function saveData() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    $('saveStatus').textContent = '자동 저장 완료';
+  } catch {
+    $('saveStatus').textContent = '저장 실패';
+    notify('기기에 저장할 수 없습니다. 브라우저 설정을 확인해 주세요.');
+  }
+}
+function todayMonth() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+}
+function moveMonth(step) {
+  const [y, m] = selectedMonth.split('-').map(Number);
+  const dt = new Date(y, m - 1 + step, 1);
+  selectedMonth = `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, '0')}`;
+  paint();
+}
+function monthTitle(month) {
+  const [y, m] = month.split('-');
+  return `${y}년 ${Number(m)}월`;
+}
+function currentValues() { return normalizeMonth(data[selectedMonth]); }
+function totals(values) {
+  const income = FIELDS.filter(f => f.group === 'income').reduce((sum, f) => sum + values[f.key], 0);
+  const expense = FIELDS.filter(f => f.group === 'expense').reduce((sum, f) => sum + values[f.key], 0);
+  return { income, expense, balance: income - expense };
+}
+function notify(message) {
+  const toast = $('toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+  clearTimeout(notify.timer);
+  notify.timer = setTimeout(() => toast.classList.remove('show'), 2900);
+}
+function createFields() {
+  for (const f of FIELDS) {
+    const row = document.createElement('div');
+    row.className = 'field-row';
+    const label = document.createElement('label');
+    label.className = 'field-label';
+    label.textContent = f.label;
+    label.htmlFor = `amount-${f.key}`;
+    const control = document.createElement('div');
+    control.className = 'amount-control';
+    const input = document.createElement('input');
+    input.id = label.htmlFor;
+    input.type = 'text';
+    input.inputMode = 'numeric';
+    input.autocomplete = 'off';
+    input.placeholder = '0';
+    input.maxLength = 16;
+    input.setAttribute('aria-label', `${f.label} 금액 (원)`);
+    input.dataset.key = f.key;
+    input.addEventListener('input', () => {
+      const month = data[selectedMonth] ?? emptyMonth();
+      month[f.key] = sanitizeAmount(input.value);
+      data[selectedMonth] = month;
+      saveData();
+      refreshSummary();
+    });
+    input.addEventListener('focus', () => input.select());
+    input.addEventListener('blur', () => {
+      const n = sanitizeAmount(input.value);
+      input.value = n ? formatNumber(n) : '';
+    });
+    const unit = document.createElement('span');
+    unit.className = 'unit'; unit.textContent = '원';
+    control.append(input, unit);
+    row.append(label, control);
+    $(f.group === 'income' ? 'incomeFields' : 'expenseFields').append(row);
+  }
+}
+function refreshSummary() {
+  const current = currentValues();
+  const { income, expense, balance } = totals(current);
+  $('balanceValue').innerHTML = `${balance < 0 ? '−' : ''}${formatNumber(balance)}<span>원</span>`;
+  $('balanceValue').classList.toggle('negative', balance < 0);
+  $('balanceMessage').textContent = income === 0 && expense === 0
+    ? '수입과 지출을 입력해 주세요'
+    : balance < 0 ? '지출이 수입보다 많습니다'
+    : balance === 0 ? '수입과 지출이 같습니다' : '이번 달 정산 후 남는 금액입니다';
+  $('totalIncome').textContent = formatWon(income);
+  $('totalExpense').textContent = formatWon(expense);
+  $('incomeSubtotal').textContent = formatWon(income);
+  $('expenseSubtotal').textContent = formatWon(expense);
+}
+function paint() {
+  $('monthPicker').value = selectedMonth;
+  $('monthText').textContent = monthTitle(selectedMonth);
+  const current = currentValues();
+  for (const f of FIELDS) {
+    const n = current[f.key];
+    $(`amount-${f.key}`).value = n ? formatNumber(n) : '';
+  }
+  $('saveStatus').textContent = '자동 저장';
+  refreshSummary();
+}
+
+// Canvas에서 직접 정산표를 그려 외부 라이브러리·외부 서버 없이 JPG로 저장합니다.
+function roundedRect(ctx, x, y, w, h, radius, fill) {
+  const r = Math.min(radius, w / 2, h / 2);
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+  ctx.fillStyle = fill;
+  ctx.fill();
+}
+function drawText(ctx, text, x, y, options = {}) {
+  ctx.textAlign = options.align || 'left';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = options.color || '#1c2b43';
+  ctx.font = `${options.weight || 600} ${options.size || 32}px system-ui, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif`;
+  ctx.fillText(text, x, y);
+}
+function drawSection(ctx, title, fields, values, subTotal, y, color, iconBg) {
+  const x = 70, w = 1100, h = 122 + fields.length * 82;
+  roundedRect(ctx, x, y, w, h, 29, '#ffffff');
+  roundedRect(ctx, x + 35, y + 34, 52, 52, 17, iconBg);
+  drawText(ctx, title === '수입' ? '+' : '−', x + 61, y + 60, { size: 36, weight: 700, color, align: 'center' });
+  drawText(ctx, title, x + 104, y + 60, { size: 37, weight: 800 });
+  drawText(ctx, formatWon(subTotal), x + w - 39, y + 60, { size: 33, weight: 800, align: 'right', color });
+  ctx.strokeStyle = '#eaf0f6';ctx.lineWidth = 2;
+  for (let i = 0; i < fields.length; i++) {
+    const rowY = y + 117 + i * 82;
+    if (i !== 0) {
+      ctx.beginPath();ctx.moveTo(x + 38, rowY - 43);ctx.lineTo(x + w - 38, rowY - 43);ctx.stroke();
+    }
+    drawText(ctx, fields[i].label, x + 42, rowY + 4, { size: 30, weight: 570, color: '#576981' });
+    drawText(ctx, formatWon(values[fields[i].key]), x + w - 42, rowY + 4, { size: 32, weight: 730, align: 'right' });
+  }
+}
+function createJpgCanvas(month, values) {
+  const c = document.createElement('canvas');
+  c.width = 1240; c.height = 1700;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = '#f4f7fb';ctx.fillRect(0, 0, c.width, c.height);
+  const grd = ctx.createLinearGradient(70, 70, 1170, 460);
+  grd.addColorStop(0, '#182a4c');grd.addColorStop(1, '#244774');
+  roundedRect(ctx, 70, 65, 1100, 425, 35, grd);
+  drawText(ctx, '월급 잔액', 114, 127, { size: 38, weight: 850, color: '#ffffff' });
+  drawText(ctx, 'MONTHLY PAYCHECK', 1119, 128, { size: 20, weight: 720, align: 'right', color: '#acc3dc' });
+  drawText(ctx, monthTitle(month), 114, 210, { size: 35, weight: 740, color: '#d2e0f2' });
+  drawText(ctx, '정산 후 남는 금액', 114, 286, { size: 27, weight: 600, color: '#c0d1e7' });
+  const { income, expense, balance } = totals(values);
+  drawText(ctx, formatWon(balance), 114, 359, { size: 67, weight: 850, color: balance < 0 ? '#ffc5b8' : '#ffffff' });
+  ctx.fillStyle = '#ffffff27';ctx.fillRect(114, 403, 1012, 2);
+  drawText(ctx, `총수입  ${formatWon(income)}`, 114, 447, { size: 27, weight: 670, color: '#bdf0d9' });
+  drawText(ctx, `총지출  ${formatWon(expense)}`, 1123, 447, { size: 27, weight: 670, color: '#ffd2c2', align: 'right' });
+  drawSection(ctx, '수입', FIELDS.filter(f => f.group === 'income'), values, income, 523, '#16966e', '#e8f8f1');
+  drawSection(ctx, '지출', FIELDS.filter(f => f.group === 'expense'), values, expense, 845, '#d87553', '#fff0e9');
+  drawText(ctx, '월별 독립 정산  ·  전월 잔액 이월 없음', 70, 1614, { size: 25, weight: 570, color: '#8a9caf' });
+  drawText(ctx, '월급 잔액', 1170, 1614, { size: 25, weight: 770, color: '#7285a3', align: 'right' });
+  return c;
+}
+function downloadBlob(blob, name) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a);
+  a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 120000);
+}
+function downloadReport() {
+  const btn = $('downloadJpg');
+  btn.disabled = true;
+  const month = selectedMonth;
+  const values = currentValues();
+  try {
+    const canvas = createJpgCanvas(month, values);
+    canvas.toBlob(blob => {
+      btn.disabled = false;
+      if (!blob) { notify('JPG 생성에 실패했습니다.'); return; }
+      downloadBlob(blob, `월급관리_${month}.jpg`);
+      notify(`${monthTitle(month)} JPG 저장을 시작했습니다.`);
+    }, 'image/jpeg', 0.93);
+  } catch (err) {
+    btn.disabled = false; notify('이미지를 만들지 못했습니다. 브라우저를 확인해 주세요.');
+  }
+}
+function backupData() {
+  const payload = { format: BACKUP_FORMAT, exportedAt: new Date().toISOString(), months: data };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  downloadBlob(blob, `월급관리_백업_${todayMonth()}.json`);
+  notify('전체 월별 데이터를 백업했습니다.');
+}
+async function restoreData(event) {
+  const file = event.target.files?.[0];
+  event.target.value = '';
+  if (!file) return;
+  try {
+    if (file.size > 5 * 1024 * 1024) throw new Error('too-large');
+    const parsed = JSON.parse(await file.text());
+    if (parsed?.format !== BACKUP_FORMAT || !parsed.months || typeof parsed.months !== 'object' || Array.isArray(parsed.months)) throw new Error('bad-format');
+    const months = {};
+    for (const [key, val] of Object.entries(parsed.months)) {
+      if (/^\d{4}-(0[1-9]|1[0-2])$/.test(key)) months[key] = normalizeMonth(val);
+    }
+    if (Object.keys(months).length === 0) throw new Error('no-data');
+    if (!confirm(`백업에 포함된 ${Object.keys(months).length}개월의 데이터를 복원합니다. 같은 월의 현재 내용은 덮어씁니다. 계속할까요?`)) return;
+    data = { ...data, ...months };
+    saveData();paint();notify('백업 데이터를 복원했습니다.');
+  } catch { notify('올바른 월급관리 백업 파일이 아닙니다.'); }
+}
+
+let data = loadData();
+let selectedMonth = todayMonth();
+createFields();
+paint();
+$('prevMonth').addEventListener('click', () => moveMonth(-1));
+$('nextMonth').addEventListener('click', () => moveMonth(1));
+$('monthPicker').addEventListener('change', event => {
+  if (/^\d{4}-(0[1-9]|1[0-2])$/.test(event.target.value)) { selectedMonth = event.target.value;paint(); }
+});
+$('downloadJpg').addEventListener('click', downloadReport);
+$('backupData').addEventListener('click', backupData);
+$('restoreData').addEventListener('click', () => $('restoreFile').click());
+$('restoreFile').addEventListener('change', restoreData);
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+}
+
+</script>
+</body>
+</html>
