@@ -8,7 +8,8 @@
   <title>월급 잔액 | 간편 월급관리</title>
   <style>
 :root{font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;color:#182640;background:#f5f7fb;font-synthesis:none;-webkit-text-size-adjust:100%;}
-*{box-sizing:border-box}body{margin:0;min-width:320px}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #72aae9;outline-offset:3px}.app-shell{max-width:620px;min-height:100vh;margin:0 auto;padding:28px 19px calc(28px + env(safe-area-inset-bottom))}.topbar{display:flex;align-items:center;gap:12px;margin-bottom:27px}.brand-mark{height:44px;width:44px;display:grid;place-items:center;background:#162747;border-radius:16px;color:#fff;font-size:28px;font-weight:750;box-shadow:0 5px 14px #15274420}.brand-eyebrow{font-size:11px;letter-spacing:.07em;color:#728097;font-weight:700;margin:0 0 2px}.topbar h1{font-size:22px;letter-spacing:-.055em;margin:0;font-weight:850}.topbar-icon{width:35px;height:35px;color:#9ca9ba;margin-left:auto}.topbar-icon svg{width:100%;height:100%}.month-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:17px}.month-arrow{width:42px;height:42px;background:#fff;border:1px solid #e3e9f1;color:#4d617a;border-radius:13px;font-size:32px;line-height:1;box-shadow:0 3px 9px #1c2e4910}.month-arrow:active{transform:scale(.97)}.month-picker-wrap{position:relative;min-width:0;flex:1;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px}.month-kicker{font-size:11px;font-weight:650;letter-spacing:.04em;color:#7a8da8}.month-text{font-size:22px;font-weight:820;letter-spacing:-.06em;white-space:nowrap}.month-picker-wrap input{position:absolute;inset:0;width:100%;height:100%;opacity:.01;cursor:pointer}.balance-panel{background:linear-gradient(145deg,#172a4a,#1d3864);color:#fff;padding:28px 24px 21px;border-radius:25px;position:relative;overflow:hidden;box-shadow:0 11px 25px #20396222}.balance-panel-glow{position:absolute;right:-73px;top:-72px;width:220px;height:220px;background:radial-gradient(circle,#49aadd3b 3%,#49aadd00 66%);pointer-events:none}.balance-label{position:relative;font-size:13px;letter-spacing:-.02em;font-weight:650;color:#b9cce5;margin:0 0 8px}.balance-value{position:relative;font-size:40px;font-weight:860;letter-spacing:-.06em;overflow-wrap:anywhere;line-height:1.25;font-variant-numeric:tabular-nums}.balance-value span{font-size:19px;font-weight:600;margin-left:5px;letter-spacing:0}.balance-value.negative{color:#ffc4b9}.balance-message{font-size:12px;color:#c5d6e9;margin-top:9px;min-height:18px}.panel-divider{height:1px;background:#ffffff23;margin:22px 0 19px}.mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:13px}.mini-stats>div{display:flex;flex-direction:column;gap:7px;min-width:0}.mini-stat-title{font-size:12px;color:#c4d2e6;display:flex;gap:7px;align-items:center}.stat-dot{width:8px;height:8px;display:inline-block;border-radius:50%}.dot-income{background:#77e0b5}.dot-expense{background:#ffba9f}.mini-stats strong{font-size:18px;font-weight:740;letter-spacing:-.035em;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}.section-heading{margin:31px 2px 12px;display:flex;align-items:center;justify-content:space-between}.section-heading h2{font-size:18px;letter-spacing:-.05em;margin:0}.section-heading>span{font-size:11px;color:#8293a9;display:flex;align-items:center;gap:5px}.section-heading>span:before{content:"";height:6px;width:6px;border-radius:50%;background:#5db893;display:block}.entry-card{background:#fff;border:1px solid #e7ebf2;border-radius:20px;padding:21px 19px 4px;margin-bottom:14px;box-shadow:0 5px 14px #344b6508}.card-heading{display:flex;align-items:center;gap:9px;margin-bottom:7px}.heading-icon{width:28px;height:28px;border-radius:10px;display:grid;place-items:center;font-size:19px;font-weight:650}.income-icon{background:#e7f9f0;color:#159868}.expense-icon{background:#fff0ea;color:#d9764e}.card-heading h3{font-size:16px;margin:0;letter-spacing:-.04em}.section-total{margin-left:auto;font-size:16px;letter-spacing:-.025em;font-variant-numeric:tabular-nums}.income-total{color:#14986a}.expense-total{color:#d06f50}.field-row{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:14px 0;min-height:62px;border-bottom:1px solid #eef1f6}.field-row:last-child{border-bottom:0}.field-label{font-size:14px;font-weight:600;letter-spacing:-.025em;min-width:0;flex:1}.amount-control{display:flex;align-items:center;justify-content:flex-end;gap:5px;flex:0 1 55%;max-width:245px}.amount-control input{width:100%;max-width:210px;text-align:right;color:#192943;font-weight:710;font-size:17px;letter-spacing:-.03em;padding:11px 6px;border:1px solid #e6edf5;border-radius:11px;background:#f8fafd;min-width:0;font-variant-numeric:tabular-nums}.amount-control input::placeholder{color:#bdc7d5;font-weight:500}.amount-control input:focus{background:white;border-color:#5c91df;outline:2px solid #b7d5ff;outline-offset:0}.amount-control .unit{font-size:13px;color:#8492a6}.export-section{margin-top:27px}.export-section h2{font-size:17px;margin:0 0 5px;letter-spacing:-.05em}.export-section p{font-size:12px;color:#8290a3;line-height:1.7;margin:0 0 16px}.export-button{display:flex;align-items:center;justify-content:center;gap:8px;border:0;background:#3269c5;color:#fff;font-weight:750;letter-spacing:-.02em;font-size:16px;border-radius:15px;padding:17px;width:100%;box-shadow:0 6px 14px #3269c526}.export-button:active{background:#2358af}.export-button:disabled{opacity:.65;cursor:wait}.backup-panel{margin:21px 0 0;border:1px solid #e4eaf2;border-radius:14px;background:#fff;padding:14px 16px}.backup-panel summary{font-size:12px;color:#5c6c82;font-weight:650;cursor:pointer;display:flex;justify-content:space-between;align-items:center;list-style:none}.backup-panel summary::-webkit-details-marker{display:none}.backup-panel summary span{font-size:18px}.backup-panel[open] summary span{transform:rotate(180deg)}.backup-panel p{line-height:1.75;font-size:12px;color:#72829a;margin:12px 0}.backup-buttons{display:flex;gap:8px;flex-wrap:wrap}.backup-buttons button{background:#f2f5fa;border:1px solid #dce5f0;color:#334c70;border-radius:9px;padding:10px 11px;font-weight:700;font-size:12px}.privacy-note{text-align:center;font-size:11px;color:#8b9aac;line-height:1.8;margin:20px auto 10px}footer{text-align:center;color:#a5b0be;font-size:11px;margin-top:20px}.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translate(-50%,20px);border-radius:12px;background:#1d304e;color:white;padding:12px 17px;font-size:13px;box-shadow:0 8px 25px #172a4a3d;opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease;max-width:calc(100vw - 40px);width:max-content;text-align:center;z-index:10}.toast.show{opacity:1;transform:translate(-50%,0)}
+*{box-sizing:border-box}body{margin:0;min-width:320px}button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #72aae9;outline-offset:3px}.app-shell{max-width:620px;min-height:100vh;margin:0 auto;padding:28px 19px calc(28px + env(safe-area-inset-bottom))}.topbar{display:flex;align-items:center;gap:12px;margin-bottom:27px}.brand-mark{height:44px;width:44px;display:grid;place-items:center;background:#162747;border-radius:16px;color:#fff;font-size:28px;font-weight:750;box-shadow:0 5px 14px #15274420}.brand-eyebrow{font-size:11px;letter-spacing:.07em;color:#728097;font-weight:700;margin:0 0 2px}.topbar h1{font-size:22px;letter-spacing:-.055em;margin:0;font-weight:850}.topbar-icon{width:35px;height:35px;color:#9ca9ba;margin-left:auto}.topbar-icon svg{width:100%;height:100%}.month-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:17px}.month-arrow{width:42px;height:42px;background:#fff;border:1px solid #e3e9f1;color:#4d617a;border-radius:13px;font-size:32px;line-height:1;box-shadow:0 3px 9px #1c2e4910}.month-arrow:active{transform:scale(.97)}.month-picker-wrap{position:relative;min-width:0;flex:1;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px}.month-kicker{font-size:11px;font-weight:650;letter-spacing:.04em;color:#7a8da8}.month-text{font-size:22px;font-weight:820;letter-spacing:-.06em;white-space:nowrap}.month-picker-wrap input{position:absolute;inset:0;width:100%;height:100%;opacity:.01;cursor:pointer}.balance-panel{background:linear-gradient(145deg,#172a4a,#1d3864);color:#fff;padding:28px 24px 21px;border-radius:25px;position:relative;overflow:hidden;box-shadow:0 11px 25px #20396222}.balance-panel-glow{position:absolute;right:-73px;top:-72px;width:220px;height:220px;background:radial-gradient(circle,#49aadd3b 3%,#49aadd00 66%);pointer-events:none}.balance-label{position:relative;font-size:13px;letter-spacing:-.02em;font-weight:650;color:#b9cce5;margin:0 0 8px}.balance-value{position:relative;font-size:40px;font-weight:860;letter-spacing:-.06em;overflow-wrap:anywhere;line-height:1.25;font-variant-numeric:tabular-nums}.balance-value span{font-size:19px;font-weight:600;margin-left:5px;letter-spacing:0}.balance-value.negative{color:#ffc4b9}.balance-message{font-size:12px;color:#c5d6e9;margin-top:9px;min-height:18px}.panel-divider{height:1px;background:#ffffff23;margin:22px 0 19px}.mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:13px}.mini-stats>div{display:flex;flex-direction:column;gap:7px;min-width:0}.mini-stat-title{font-size:12px;color:#c4d2e6;display:flex;gap:7px;align-items:center}.stat-dot{width:8px;height:8px;display:inline-block;border-radius:50%}.dot-income{background:#77e0b5}.dot-expense{background:#ffba9f}.mini-stats strong{font-size:18px;font-weight:740;letter-spacing:-.035em;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}.section-heading{margin:31px 2px 12px;display:flex;align-items:center;justify-content:space-between}.section-heading h2{font-size:18px;letter-spacing:-.05em;margin:0}.section-heading>span{font-size:11px;color:#8293a9;display:flex;align-items:center;gap:5px}.section-heading>span:before{content:"";height:6px;width:6px;border-radius:50%;background:#5db893;display:block}.entry-card{background:#fff;border:1px solid #e7ebf2;border-radius:20px;padding:21px 19px 4px;margin-bottom:14px;box-shadow:0 5px 14px #344b6508}.card-heading{display:flex;align-items:center;gap:9px;margin-bottom:7px}.heading-icon{width:28px;height:28px;border-radius:10px;display:grid;place-items:center;font-size:19px;font-weight:650}.income-icon{background:#e7f9f0;color:#159868}.expense-icon{background:#fff0ea;color:#d9764e}.card-heading h3{font-size:16px;margin:0;letter-spacing:-.04em}.section-total{margin-left:auto;font-size:16px;letter-spacing:-.025em;font-variant-numeric:tabular-nums}.income-total{color:#14986a}.expense-total{color:#d06f50}.field-row{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:14px 0;min-height:62px;border-bottom:1px solid #eef1f6}.field-row:last-child{border-bottom:0}.field-label{font-size:14px;font-weight:600;letter-spacing:-.025em;min-width:0;flex:1}.amount-control{display:flex;align-items:center;justify-content:flex-end;gap:5px;flex:0 1 55%;max-width:245px}.amount-control input{width:100%;max-width:210px;text-align:right;color:#192943;font-weight:710;font-size:17px;letter-spacing:-.03em;padding:11px 6px;border:1px solid #e6edf5;border-radius:11px;background:#f8fafd;min-width:0;font-variant-numeric:tabular-nums}.amount-control input::placeholder{color:#bdc7d5;font-weight:500}.amount-control input:focus{background:white;border-color:#5c91df;outline:2px solid #b7d5ff;outline-offset:0}.amount-control .unit{font-size:13px;color:#8492a6}.export-section{margin-top:27px}.export-section h2{font-size:17px;margin:0 0 5px;letter-spacing:-.05em}.export-section p{font-size:12px;color:#8290a3;line-height:1.7;margin:0 0 16px}.export-button{display:flex;align-items:center;justify-content:center;gap:8px;border:0;background:#3269c5;color:#fff;font-weight:750;letter-spacing:-.02em;font-size:16px;border-radius:15px;padding:17px;width:100%;box-shadow:0 6px 14px #3269c526}.export-button:active{background:#2358af}.export-button:disabled{opacity:.65;cursor:wait}.backup-panel{margin:21px 0 0;border:1px solid #e4eaf2;border-radius:14px;background:#fff;padding:14px 16px}.backup-panel summary{font-size:12px;color:#5c6c82;font-weight:650;cursor:pointer;display:flex;justify-content:space-between;align-items:center;list-style:none}.backup-panel summary::-webkit-details-marker{display:none}.backup-panel summary span{font-size:18px}.backup-panel[open] summary span{transform:rotate(180deg)}.backup-panel p{line-height:1.75;font-size:12px;color:#72829a;margin:12px 0}.backup-buttons{display:flex;gap:8px;flex-wrap:wrap}.backup-buttons button{background:#f2f5fa;border:1px solid #dce5f0;color:#334c70;border-radius:9px;padding:10px 11px;font-weight:700;font-size:12px}.privacy-note{text-align:center;font-size:11px;color:#8b9aac;line-height:1.8;margin:20px auto 10px}footer{text-align:center;color:#a5b0be;font-size:11px;margin-top:20px}.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translate(-50%,20px);border-radius:12px;background:#1d304e;color:white;padding:12px 17px;font-size:13px;box-shadow:0 8px 25px #172a4a3d;opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease;max-width:calc(100vw - 40px);width:max-content;text-align:center;z-index:10}.toast.show{opacity:1;transform:translate(-50%,0)}
+.memo-card{background:#fff;border:1px solid #e7ebf2;border-radius:20px;padding:21px 19px 18px;margin:0 0 14px;box-shadow:0 5px 14px #344b6508}.memo-heading{display:flex;align-items:center;gap:9px;margin-bottom:10px}.memo-icon{width:28px;height:28px;border-radius:10px;display:grid;place-items:center;font-size:17px;background:#edf3ff;color:#4774bf}.memo-heading h3{font-size:16px;margin:0;letter-spacing:-.04em}.memo-caption{font-size:11px;color:#8293a9;margin-left:auto}.memo-input{display:block;width:100%;min-height:122px;resize:vertical;padding:14px 15px;border:1px solid #e3eaf3;border-radius:12px;background:#f8fafd;color:#192943;font-size:14px;line-height:1.7;letter-spacing:-.01em}.memo-input::placeholder{color:#a3afc0}.memo-input:focus{background:#fff;border-color:#5c91df;outline:2px solid #b7d5ff;outline-offset:0}.memo-help{font-size:11px;color:#8b98a9;margin:9px 1px 0;line-height:1.5}
 @media(min-width:700px){.app-shell{padding-top:45px}.balance-panel{padding:32px 30px 26px}.balance-value{font-size:47px}}@media(max-width:350px){.app-shell{padding-left:13px;padding-right:13px}.balance-value{font-size:35px}.amount-control{flex-basis:54%}.field-label{font-size:13px}.amount-control input{font-size:15px}}
 
 </style>
@@ -55,6 +56,13 @@
         <div id="expenseFields" class="fields"></div>
       </section>
 
+      <section class="memo-card" aria-labelledby="memoHeading">
+        <div class="memo-heading"><span class="memo-icon" aria-hidden="true">✎</span><h3 id="memoHeading">비고</h3><span class="memo-caption">월별 메모</span></div>
+        <label for="monthlyMemo" class="field-label" style="display:block;margin-bottom:10px">이번 달 기록</label>
+        <textarea id="monthlyMemo" class="memo-input" rows="4" maxlength="1000" placeholder="이번 달 특이사항이나 기억할 내용을 자유롭게 기록해 주세요."></textarea>
+        <p class="memo-help">월마다 따로 자동 저장되며, JPG 정산표에도 함께 기록됩니다.</p>
+      </section>
+
       <section class="export-section" aria-label="월별 결과 저장">
         <div><h2>이번 달 정산 완료</h2><p>수입 · 지출 내역과 남는 금액을 한 장의 이미지로 저장합니다.</p></div>
         <button id="downloadJpg" class="export-button" type="button"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>월별 내역 JPG 저장</span></button>
@@ -76,6 +84,7 @@
 const STORAGE_KEY = 'monthly-paycheck-data-v1';
 const BACKUP_FORMAT = 'monthly-paycheck-v1';
 const MAX_AMOUNT = 999999999999;
+const MAX_MEMO_LENGTH = 1000;
 const FIELDS = [
   { key: 'net', label: '실수령액', group: 'income' },
   { key: 'otherIncome', label: '기타수입', group: 'income' },
@@ -90,7 +99,10 @@ const formatter = new Intl.NumberFormat('ko-KR');
 const $ = id => document.getElementById(id);
 const formatNumber = n => formatter.format(Math.abs(n));
 const formatWon = n => `${n < 0 ? '−' : ''}${formatNumber(n)}원`;
-const emptyMonth = () => Object.fromEntries(FIELDS.map(f => [f.key, 0]));
+const emptyMonth = () => ({ ...Object.fromEntries(FIELDS.map(f => [f.key, 0])), memo: '' });
+function sanitizeMemo(raw) {
+  return typeof raw === 'string' ? raw.slice(0, MAX_MEMO_LENGTH) : '';
+}
 
 function sanitizeAmount(raw) {
   const digits = String(raw ?? '').replace(/[^0-9]/g, '').slice(0, 12);
@@ -100,6 +112,7 @@ function normalizeMonth(raw) {
   const record = emptyMonth();
   if (raw && typeof raw === 'object' && !Array.isArray(raw)) {
     for (const f of FIELDS) record[f.key] = sanitizeAmount(raw[f.key]);
+    record.memo = sanitizeMemo(raw.memo);
   }
   return record;
 }
@@ -210,6 +223,7 @@ function paint() {
     const n = current[f.key];
     $(`amount-${f.key}`).value = n ? formatNumber(n) : '';
   }
+  $('monthlyMemo').value = current.memo;
   $('saveStatus').textContent = '자동 저장';
   refreshSummary();
 }
@@ -251,10 +265,34 @@ function drawSection(ctx, title, fields, values, subTotal, y, color, iconBg) {
     drawText(ctx, formatWon(values[fields[i].key]), x + w - 42, rowY + 4, { size: 32, weight: 730, align: 'right' });
   }
 }
+function wrapMemoLines(ctx, memo, maxWidth) {
+  const lines = [];
+  for (const paragraph of memo.replace(/\r\n?/g, '\n').split('\n')) {
+    if (!paragraph) { lines.push(''); continue; }
+    let line = '';
+    for (const char of paragraph) {
+      if (ctx.measureText(line + char).width > maxWidth && line) {
+        lines.push(line);
+        line = char;
+      } else {
+        line += char;
+      }
+    }
+    lines.push(line);
+  }
+  return lines;
+}
 function createJpgCanvas(month, values) {
   const c = document.createElement('canvas');
-  c.width = 1240; c.height = 1700;
+  c.width = 1240;
   const ctx = c.getContext('2d');
+  const memo = sanitizeMemo(values.memo).trim();
+  ctx.font = '500 29px system-ui, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif';
+  const memoLines = memo ? wrapMemoLines(ctx, memo, 1000) : [];
+  const memoTop = 1492, lineHeight = 45;
+  const memoHeight = memo ? 120 + memoLines.length * lineHeight : 0;
+  c.height = Math.max(1700, memoTop + memoHeight + 130);
+  // Resizing canvas resets its drawing context; restore styles below.
   ctx.fillStyle = '#f4f7fb';ctx.fillRect(0, 0, c.width, c.height);
   const grd = ctx.createLinearGradient(70, 70, 1170, 460);
   grd.addColorStop(0, '#182a4c');grd.addColorStop(1, '#244774');
@@ -270,8 +308,17 @@ function createJpgCanvas(month, values) {
   drawText(ctx, `총지출  ${formatWon(expense)}`, 1123, 447, { size: 27, weight: 670, color: '#ffd2c2', align: 'right' });
   drawSection(ctx, '수입', FIELDS.filter(f => f.group === 'income'), values, income, 523, '#16966e', '#e8f8f1');
   drawSection(ctx, '지출', FIELDS.filter(f => f.group === 'expense'), values, expense, 845, '#d87553', '#fff0e9');
-  drawText(ctx, '월별 독립 정산  ·  전월 잔액 이월 없음', 70, 1614, { size: 25, weight: 570, color: '#8a9caf' });
-  drawText(ctx, '월급 잔액', 1170, 1614, { size: 25, weight: 770, color: '#7285a3', align: 'right' });
+  if (memo) {
+    roundedRect(ctx, 70, memoTop, 1100, memoHeight, 29, '#ffffff');
+    drawText(ctx, '비고', 112, memoTop + 54, {size: 36, weight: 800});
+    const textY = memoTop + 109;
+    memoLines.forEach((line, idx) => {
+      drawText(ctx, line, 112, textY + idx * lineHeight, {size: 29, weight: 500, color: '#52637a'});
+    });
+  }
+  const footerY = c.height - 86;
+  drawText(ctx, '월별 독립 정산  ·  전월 잔액 이월 없음', 70, footerY, { size: 25, weight: 570, color: '#8a9caf' });
+  drawText(ctx, '월급 잔액', 1170, footerY, { size: 25, weight: 770, color: '#7285a3', align: 'right' });
   return c;
 }
 function downloadBlob(blob, name) {
@@ -332,6 +379,12 @@ $('prevMonth').addEventListener('click', () => moveMonth(-1));
 $('nextMonth').addEventListener('click', () => moveMonth(1));
 $('monthPicker').addEventListener('change', event => {
   if (/^\d{4}-(0[1-9]|1[0-2])$/.test(event.target.value)) { selectedMonth = event.target.value;paint(); }
+});
+$('monthlyMemo').addEventListener('input', event => {
+  const month = data[selectedMonth] ?? emptyMonth();
+  month.memo = sanitizeMemo(event.target.value);
+  data[selectedMonth] = month;
+  saveData();
 });
 $('downloadJpg').addEventListener('click', downloadReport);
 $('backupData').addEventListener('click', backupData);
